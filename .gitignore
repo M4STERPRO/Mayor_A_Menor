@@ -1,52 +1,23 @@
-# Prerequisites
-*.d
-
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+#include <stdio.h>
+int main()
+{
+    int lista[10];
+    int i, j, aux;
+    
+    for (i=0; i<10; i++){
+        printf ("Dale valor al vector en la posición %d: ", i);
+        scanf ("%d", &lista[i]);
+    }
+    printf("Ahora se ordenarán los números insertados de mayor a menor: " "\n");
+    for (i=0; i<10; i++){  
+        for (j=i; j<10; j++){
+            if (lista[i] < lista[j]){
+                aux = lista[i];
+                lista[i] = lista[j];
+                lista[j] = aux;
+            }
+        }
+    }
+    for (i=0; i<10; i++)printf("%d \t", lista[i]);
+    return 0;
+}
